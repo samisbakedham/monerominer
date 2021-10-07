@@ -15,4 +15,4 @@ XMRig is a high performance, open source, cross platform RandomX, KawPow, Crypto
 ## Usage
 The preferred way to configure the miner is the JSON config file as it is more flexible and human friendly. The command line interface does not cover all features, such as mining profiles for different algorithms. Important options can be changed during runtime without miner restart by editing the config file or executing API calls.
 
-Walker Industries 2021.
+Copyright Walker Industries 2021.
