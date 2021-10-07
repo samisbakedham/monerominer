@@ -1,7 +1,6 @@
 /*
- * Based on public domain code available at: http://cr.yp.to/snuffle.html
- *
- * This therefore is public domain.
+
+Copyright Walker Industries 2021
  */
 
 #ifndef ZT_SALSA20_HPP

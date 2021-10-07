@@ -1,15 +1,7 @@
 /*
- * Based on public domain code available at: http://cr.yp.to/snuffle.html
- *
- * Modifications and C-native SSE macro based SSE implementation by
- * Adam Ierymenko <adam.ierymenko@zerotier.com>.
- *
- * Additional modifications and code cleanup for AstroBWT by
- * SChernykh <https://github.com/SChernykh>
- *
- * Since the original was public domain, this is too.
- */
 
+Copyright Walker Industries 2021
+ */
 #include "Salsa20.hpp"
 
 // Statically compute and define SSE constants

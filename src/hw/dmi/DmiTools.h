@@ -1,23 +1,7 @@
-/* XMRig
- * Copyright (c) 2000-2002 Alan Cox     <alan@redhat.com>
- * Copyright (c) 2005-2020 Jean Delvare <jdelvare@suse.de>
- * Copyright (c) 2018-2021 SChernykh    <https://github.com/SChernykh>
- * Copyright (c) 2016-2021 XMRig        <https://github.com/xmrig>, <support@xmrig.com>
- *
- *   This program is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License as published by
- *   the Free Software Foundation, either version 3 of the License, or
- *   (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *   GNU General Public License for more details.
- *
- *   You should have received a copy of the GNU General Public License
- *   along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+/*
 
+Copyright Walker Industries 2021
+ */
 #ifndef XMRIG_DMITOOLS_H
 #define XMRIG_DMITOOLS_H
 
@@ -54,7 +38,7 @@ inline T dmi_get(const dmi_header *h, size_t offset)    { return *reinterpret_ca
 const char *dmi_string(dmi_header *dm, size_t offset);
 
 
-} /* namespace xmrig */
+} /* namespace walkerindustries */
 
 
-#endif /* XMRIG_DMITOOLS_H */
+#endif /* walkerindustries */

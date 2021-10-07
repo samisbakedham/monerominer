@@ -1,31 +1,8 @@
 /*
-Copyright (c) 2018-2019, tevador <tevador@gmail.com>
 
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-	* Redistributions of source code must retain the above copyright
-	  notice, this list of conditions and the following disclaimer.
-	* Redistributions in binary form must reproduce the above copyright
-	  notice, this list of conditions and the following disclaimer in the
-	  documentation and/or other materials provided with the distribution.
-	* Neither the name of the copyright holder nor the
-	  names of its contributors may be used to endorse or promote products
-	  derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
+Copyright Walker Industries 2021
+ */
+ 
 #include "crypto/randomx/configuration.h"
 #include "crypto/randomx/program.hpp"
 #include "crypto/randomx/blake2/endian.h"
@@ -231,7 +208,7 @@ namespace randomx {
 	const SuperscalarInstructionInfo SuperscalarInstructionInfo::IMULH_R = SuperscalarInstructionInfo("IMULH_R", SuperscalarInstructionType::IMULH_R, IMULH_R_ops_array, 1, 0, 1);
 	const SuperscalarInstructionInfo SuperscalarInstructionInfo::ISMULH_R = SuperscalarInstructionInfo("ISMULH_R", SuperscalarInstructionType::ISMULH_R, ISMULH_R_ops_array, 1, 0, 1);
 	const SuperscalarInstructionInfo SuperscalarInstructionInfo::IMUL_RCP = SuperscalarInstructionInfo("IMUL_RCP", SuperscalarInstructionType::IMUL_RCP, IMUL_RCP_ops_array, 1, 1, -1);
-	
+
 	const SuperscalarInstructionInfo SuperscalarInstructionInfo::NOP = SuperscalarInstructionInfo("NOP");
 
 	//these are some of the options how to split a 16-byte window into 3 or 4 x86 instructions.
@@ -494,7 +471,7 @@ namespace randomx {
 			// * value must be ready at the required cycle
 			// * cannot be the same as the source register unless the instruction allows it
 			//   - this avoids optimizable instructions such as "xor r, r" or "sub r, r"
-			// * register cannot be multiplied twice in a row unless allowChainedMul is true 
+			// * register cannot be multiplied twice in a row unless allowChainedMul is true
 			//   - this avoids accumulation of trailing zeroes in registers due to excessive multiplication
 			//   - allowChainedMul is set to true if an attempt to find source/destination registers failed (this is quite rare, but prevents a catastrophic failure of the generator)
 			// * either the last instruction applied to the register or its source must be different than this instruction
@@ -619,7 +596,7 @@ namespace randomx {
 			if (commit)
 				if (trace) std::cout << "; (eliminated)" << std::endl;
 			return cycle;
-		} 
+		}
 		else if (mop.isSimple()) {
 			//this macro-op has only one uOP
 			return scheduleUop<commit>(mop.getUop1(), portBusy, cycle);
@@ -676,7 +653,7 @@ namespace randomx {
 			if (trace) std::cout << "; ------------- fetch cycle " << cycle << " (" << decodeBuffer->getName() << ")" << std::endl;
 
 			int bufferIndex = 0;
-			
+
 			//fill all instruction slots in the current decode buffer
 			while (bufferIndex < decodeBuffer->getSize()) {
 				int topCycle = cycle;
@@ -831,7 +808,7 @@ namespace randomx {
 		prog.decodeCycles = decodeCycle;
 		prog.ipc = ipc;
 		prog.mulCount = mulCount;
-		
+
 
 		/*if(INFO) std::cout << "; ALU port utilization:" << std::endl;
 		if (INFO) std::cout << "; (* = in use, _ = idle)" << std::endl;

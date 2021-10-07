@@ -1,8 +1,7 @@
 /*
-salsa20-merged.c version 20051118
-D. J. Bernstein
-Public domain.
-*/
+
+Copyright Walker Industries 2021
+ */
 
 #include "ecrypt-sync.h"
 
